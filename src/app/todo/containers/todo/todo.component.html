@@ -1,0 +1,8 @@
+<h1>{{ name }}</h1>
+<app-todo-list [todoItems]="todoList$ | async" (todoItemsChange)="onTodoItemsChange($event)">
+  Brak zadan do wykonania
+</app-todo-list>
+
+<pre>
+  {{  todoList$ | async | json }}
+</pre>
