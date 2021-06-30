@@ -1,6 +1,6 @@
 export interface PassengerDetails {
     name: string;
-    content?: string;
+    deleted: boolean;
     age: number;
     boarded: boolean;
     doneDate?: Date;

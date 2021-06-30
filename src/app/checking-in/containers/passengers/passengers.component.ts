@@ -10,12 +10,17 @@ import { PassengersService } from '../../services/';
 export class PassengersComponent implements OnInit {
   name: string;
   passengerList: PassengerDetails[];
+  
 
   constructor(private passengerService: PassengersService) { }
 
   ngOnInit(): void {
     this.name = 'Passengers-container'
     this.passengerList = this.passengerService.getPassengers();
+  }
+
+  onTodoItemsChange(passengerList: PassengerDetails[]): void {
+    this.passengerService.savePassengers(passengerList);
   }
 }
 

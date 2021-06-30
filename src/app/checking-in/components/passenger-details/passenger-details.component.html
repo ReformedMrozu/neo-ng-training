@@ -1,5 +1,11 @@
-<li>
-  <label>{{ passenger.name }}</label> 
-  <label>, lat: {{ passenger.age }}</label>  
-  <button type="button">usuń</button>
+<li
+  *ngIf="!passenger.deleted"
+  appMarkBoarded
+  [boarded]="passenger.boarded"
+  (markingHasChanged)="hasChanged()"
+>
+  <input type="checkbox" (change)="onChange($event)" />
+  <label>{{ passenger.name }}</label>
+  <label>, lat: {{ passenger.age }}</label>
+  <button type="button" (click)="onDelete()">usuń</button>
 </li>

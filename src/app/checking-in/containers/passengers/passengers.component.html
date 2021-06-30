@@ -1,4 +1,8 @@
 <h3>{{ name }}</h3>
-<app-passenger-list [passengerDetails]="passengerList"></app-passenger-list>
+<app-passenger-list [passengerDetails]="passengerList" (todoItemsChange)="onTodoItemsChange($event)"></app-passenger-list>
+
+<pre>
+    {{ passengerList | json }}
+  </pre>
 
 <app-passenger-summary></app-passenger-summary>

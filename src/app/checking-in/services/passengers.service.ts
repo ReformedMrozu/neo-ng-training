@@ -12,14 +12,16 @@ import { PassengerDetails } from '../types';
 @Injectable()
 export class PassengersService {
     private passengerList: PassengerDetails[] = [
-        { name: 'John', age: 17, boarded: false },
-        { name: 'Tom', age: 23, boarded: false },
-        { name: 'Mariusz', age: 27, boarded: false },
-        { name: 'Janusz', age: 37, boarded: false },
-        { name: 'Silena Gomes', age: 47, boarded: false },
+        { name: 'John', age: 17, boarded: false, deleted: false },
+        { name: 'Tom', age: 23, boarded: false, deleted: false }
     ];
 
     getPassengers(): PassengerDetails[] {
         return this.passengerList;
+    }
+
+    savePassengers(passengers: PassengerDetails[]): void {
+        this.passengerList = passengers;
+        console.log('saving todo list ', passengers);
     }
 }

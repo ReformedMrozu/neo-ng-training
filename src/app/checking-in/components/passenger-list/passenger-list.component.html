@@ -6,6 +6,8 @@
     <app-passenger-details
       *ngFor="let passenger of passengerDetails"
       [passenger]="passenger"
+      (checked)="onChecked($event, passenger.name)"
+      (deleted)="onDeleted(passenger.name)"
     ></app-passenger-details>
   </ul>
 </div>
