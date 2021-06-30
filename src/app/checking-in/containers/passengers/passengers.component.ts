@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PassengerDetails } from '../../types';
+import { PassengersService } from '../../services/';
 
 @Component({
   selector: 'app-passengers',
@@ -6,12 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./passengers.component.scss']
 })
 export class PassengersComponent implements OnInit {
+  name: string;
+  passengerList: PassengerDetails[];
 
-  constructor() { }
+  constructor(private passengerService: PassengersService) { }
 
   ngOnInit(): void {
+    this.name = 'Passengers-container'
+    this.passengerList = this.passengerService.getPassengers();
   }
-
 }
 
 

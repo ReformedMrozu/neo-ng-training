@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { components, PassengerDetailsComponent, PassengerListComponent, PassengerSummaryComponent } from './components';
 import { PassengersComponent } from './containers/passengers/passengers.component';
+import { services } from './services';
 
 @NgModule({
   declarations: [
@@ -10,11 +11,12 @@ import { PassengersComponent } from './containers/passengers/passengers.componen
   ],
   imports: [
     CommonModule
-  ], 
+  ],
+  providers: [
+    ...services,
+  ],
   exports: [
-    PassengerListComponent,
-    PassengerSummaryComponent,
-    PassengerDetailsComponent
+    PassengersComponent
   ]
 })
 export class CheckingInModule { }

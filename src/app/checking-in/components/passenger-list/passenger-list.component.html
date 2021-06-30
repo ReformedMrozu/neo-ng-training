@@ -1,1 +1,15 @@
-<p>passenger-list works!</p>
+<div
+  class="passenger_list__container"
+  *ngIf="passengerDetails.length > 0; else emptyList"
+>
+  <ul>
+    <app-passenger-details
+      *ngFor="let passenger of passengerDetails"
+      [passenger]="passenger"
+    ></app-passenger-details>
+  </ul>
+</div>
+
+<ng-template #emptyList>
+  <ng-content></ng-content>
+</ng-template>
